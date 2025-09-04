@@ -1,100 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Приглашение</title>
-  <style>
-    :root { --bg:#faf7f5; --card:#fff; --text:#141414; --muted:#777; --accent:#111; }
-    html,body { margin:0; padding:0; height:100%; }
+<meta charset="UTF-8">
+<title>Свадебное извещение</title>
+<style>
     body {
-      font-family: system-ui, -apple-system, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display:flex; justify-content:center; align-items:center;
-      min-height:100vh;
+        font-family: "Times New Roman", serif;
+        margin: 80px;
+        background: #fff;
     }
-    .card {
-      max-width: 640px;
-      width:100%;
-      background: var(--card);
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.08);
-      border: 2px solid #ddd;
+    .block {
+        border: 2px solid black;
+        padding: 20px;
+        margin-bottom: 30px;
+        font-size: 60px;
+        line-height: 1.6;
     }
-    h1 { text-align:center; font-weight:700; margin: 8px 0 20px; font-size:26px; }
-    p { font-size:20px; line-height:1.5; margin:12px 0; }
-    .page { display:none; }
-    .page.active { display:block; }
-    .nav { display:flex; justify-content:space-between; margin-top:20px; }
+    .title {
+        text-align: center;
+        font-size: 60px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .stamp {
+        float: right;
+    }
+    .flag {
+        float: left;
+        width: 60px;
+        margin-right: 15px;
+    }
+    .barcode {
+        float: right;
+        width: 200px;
+    }
+    form {
+        border: 2px solid black;
+        padding: 20px;
+        font-size: 60px;
+    }
+    input, textarea, select {
+        font-size: 60px;
+        width: 100%;
+        margin: 10px 0;
+        padding: 8px;
+    }
     button {
-      padding:12px 20px; font-size:16px; font-weight:600;
-      border-radius:12px; border:2px solid #111; background:#fff; cursor:pointer;
+        font-size: 22px;
+        padding: 10px 20px;
+        background: black;
+        color: white;
+        border: none;
+        cursor: pointer;
     }
-    button:disabled { opacity:.6; cursor:default; }
-    input[type="text"],input[type="tel"] {
-      width:100%; box-sizing:border-box; font-size:18px;
-      padding:14px 12px; border:1px solid #ccc; border-radius:12px;
-      margin:10px 0;
-    }
-    .radios label { display:flex; gap:10px; font-size:18px; margin:10px 0; }
-    .note { font-size:14px; color:var(--muted); margin-top:10px; }
-  </style>
+</style>
 </head>
 <body>
-  <div class="card">
 
-    <!-- Страница 1: Повестка -->
-    <div class="page active" id="page1">
-      <h1>Повестка</h1>
-      <p>Семья Ивановых вызывает Вас в качестве гостя к <b>15 часам 31.09.2025 г.</b></p>
-      <p>Адрес: городской округ Краснодар, ул. Маршеско, 87.</p>
-      <p><b>Приложение:</b> ссылка на карту места проведения.</p>
-      <p>В соответствии с действующим законодательством нормы дресс-кода отсутствуют, но предусмотрены меры, обеспечивающие отличное настроение.</p>
-      <p>Гостям разрешается плакать от счастья, участвовать в конкурсах, танцевать, шутить и даже кричать «Горько!». </p>
-      <p><b>Расписание мероприятия:</b><br>
-        16:00 — Сбор гостей<br>
-        17:00 — Торжественная церемония<br>
-        18:00 — Банкет<br>
-        23:00 — Завершение
-      </p>
-      <div class="nav">
-        <span></span>
-        <button onclick="nextPage(2)">Далее →</button>
-      </div>
-    </div>
+<div class="block">
+    <img src="gerb.png" alt="Герб" class="stamp" width="80">
+    <img src="barcode.png" alt="Штрихкод" class="barcode">
+    <div class="title">Извещение</div>
+    <p>Семья Дранеевых сообщает о том, что свадебное мероприятие по делу заключения брачного союза № 04-10/2025 в отношении влюблённых Дранеева Евгения Романовича и Медведевой Анны Александровны назначено к проведению на 04 октября 2025 года.</p>
+</div>
 
-    <!-- Страница 2: Последствия неявки -->
-    <div class="page" id="page2">
-      <h1>Последствия неявки</h1>
-      <p>Материалы дела в отношении неявившегося лица будут переданы в семейно-дружеский надзорный орган для проведения проверки.</p>
-      <div class="nav">
-        <button onclick="nextPage(1)">← Назад</button>
-        <button onclick="nextPage(3)">Далее →</button>
-      </div>
-    </div>
+<div class="block">
+    <img src="flag.png" alt="Флаг России" class="flag">
+    <div class="title">Повестка</div>
+    <p>Семья Дранеевых вызывает Вас в качестве гостя к 10:00 04.10.2025 г. для участия в торжественных мероприятиях.</p>
+    <p>📍 Программа мероприятий:<br>
+    10:00 — Выкуп невесты<br>
+    г. Балашиха, проспект Ленина, д.74, подъезд 4<br><br>
+    13:00 — Торжественная роспись<br>
+    усадьба «Белая Дача», Московская область, г. Котельники, микрорайон Белая Дача, д.1А<br><br>
+    16:30 — Банкет<br>
+    Московская область, г. Балашиха, микрорайон Салтыковка, ул. Радио, д.26А</p>
+</div>
 
-    <!-- Страница 3: Форма -->
-    <div class="page" id="page3">
-      <h1>Расписка</h1>
-      <form action="https://formsubmit.co/Antesiik1819@yandex.ru" method="POST">
-        <!-- капча отключена -->
-        <input type="hidden" name="_captcha" value="false">
-        <!-- тема письма -->
-        <input type="hidden" name="_subject" value="Новая расписка с сайта">
-        <!-- красивый вид -->
-        <input type="hidden" name="_template" value="table">
-        <!-- редирект -->
-        <input type="hidden" name="_next" value="spasibo.html">
+<div class="block">
+    <div class="title">Приложение</div>
+    <p>В соответствии действующим законодательством нормы дресс-кода отсутствуют, НО предусмотрены меры, обеспечивающие отличное настроение. Разрешается плакать от счастья, танцевать, участвовать в конкурсах, шутить и даже кричать «Горько!».<br>
+    Стоимость первых трёх криков «Горько!» — 1000 руб.</p>
+</div>
 
-        <label for="fio">ФИО</label>
-        <input id="fio" name="ФИО" type="text" required placeholder="Иванов Иван Иванович">
 
-        <label for="phone">Номер телефона</label>
-        <input id="phone" name="Телефон" type="tel" required placeholder="+7 912 345-67-89">
 
-        <div class="radios">
-          <label><input type="radio" name="Статус" value="Обязуюсь явиться" required> Обязуюсь своевременно явиться</label>
-          <label><input type="radio" name="Статус" value="Не смогу явиться"> Не смогу явиться</label>
-        </div>
+<div class="block">
+    <div class="title">Форма подтверждения</div>
+    <form method="POST" action="send.php">
+        <label>ФИО:</label>
+        <input type="text" name="fio" required>
+        <label>Номер телефона:</label>
+        <input type="text" name="phone" required>
+        <label>Ваш ответ:</label>
+        <select name="answer">
+            <option value="Я приду">Я приду</option>
+            <option value="Не смогу прийти">Не смогу прийти</option>
+        </select>
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+
+  <div class="block">
+    <div class="title">Последствия неявки</div>
+    <p>Материалы дела в отношении неявившегося лица будут переданы в семейно-дружеский надзорный орган для проведения проверки.</p>
+</div>
+  
+</body>
+</html>
