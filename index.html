@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Свадебное приглашение</title>
+  <style>
+    :root {
+      --bg:#faf7f5; 
+      --card:#fff; 
+      --text:#141414; 
+      --muted:#777; 
+      --accent:#b22222;
+    }
+    html,body { margin:0; padding:0; }
+    body {
+      font-family: system-ui, -apple-system, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 24px;
+      line-height: 1.5;
+    }
+    .card {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
+    h1,h2 {
+      text-align:center; 
+      font-weight:600; 
+      margin: 8px 0 20px;
+      color: var(--accent);
+    }
+    h2 { margin-top:30px; }
+    p { margin: 10px 0; }
+    .program {
+      background:#fdf2f2;
+      border-left:4px solid var(--accent);
+      padding:12px 16px;
+      margin:18px 0;
+      border-radius:8px;
+    }
+    label { display:block; font-size:16px; margin: 14px 0 6px; }
+    .req::after { content:" *"; color:#d33; }
+    input[type="text"],
+    input[type="tel"] {
+      width:100%; box-sizing:border-box; font-size:16px;
+      padding:14px 12px; border:1px solid #e3e3e3; border-radius:12px;
+      background:#f7f7f7; outline:none;
+    }
+    input[type="text"]:focus,
+    input[type="tel"]:focus { border-color:#c9c9c9; background:#fff; }
+    .radios { margin-top:8px; }
+    .radios label { display:flex; align-items:flex-start; gap:10px; margin:10px 0; }
+    .note { font-size:13px; color:var(--muted); margin-top:10px; }
+    button[type="submit"]{
+      width:100%; margin-top:18px; padding:14px 16px; font-size:16px; font-weight:600;
+      background:var(--accent); color:#fff; border:none; border-radius:14px;
+      cursor:pointer;
+    }
+    button[type="submit"]:hover { opacity:0.9; }
+    button[type="submit"]:active { transform: translateY(1px); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>📜 Извещение</h1>
+    <p>Семья Дранеевых сообщает о том, что свадебное мероприятие по делу заключения брачного союза № 04-10/2025 в отношении влюблённых:</p>
+    <p><b>Дранеева Евгения Романовича</b><br>и<br><b>Медведевой Анны Александровны</b></p>
+    <p>назначено к проведению на <b>04 октября 2025 года</b>.</p>
+
+    <h2>📜 Повестка</h2>
+    <p>Семья Дранеевых вызывает Вас в качестве гостя к <b>10:00 04.10.2025 г.</b> для участия в торжественных мероприятиях.</p>
+
+    <div class="program">
+      <p><b>10:00</b> — Выкуп невесты<br>
+      г. Балашиха, проспект Ленина, д.74, подъезд 4</p>
+
+      <p><b>13:00</b> — Торжественная роспись<br>
+      усадьба «Белая Дача», Московская область, г. Котельники, мкр. Белая Дача, д.1А</p>
+
+      <p><b>16:30</b> — Банкет<br>
+      Московская область, г. Балашиха, мкр. Салтыковка, ул. Радио, д.26А</p>
+    </div>
+
+    <p><b>Условия:</b><br>
+    Нормы дресс-кода отсутствуют.<br>
+    Разрешается плакать от счастья, танцевать, участвовать в конкурсах, шутить и даже кричать «Горько!».<br>
+    Стоимость первых трёх криков «Горько!» — 1000 руб.</p>
+  </div>
+
+  <div class="card" role="region" aria-label="Форма подтверждения">
+    <h2>Форма подтверждения</h2>
+    <form action="https://formsubmit.co/Antesiik1819@yandex.ru" method="POST" autocomplete="on">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="RSVP со свадебного сайта">
+      <input type="hidden" name="_template" value="table">
+
+      <label class="req" for="fio">ФИО</label>
+      <input id="fio" name="ФИО" type="text" required placeholder="Иванов Иван Иванович">
+
+      <label class="req" for="phone">Номер телефона</label>
+      <input id="phone" name="Телефон" type="tel" required
+             placeholder="+7 912 345-67-89"
+             pattern="^[0-9()+\-\s]{7,}$"
+             title="Введите номер телефона">
+
+      <div class="radios">
+        <label>
+          <input type="radio" name="Статус" value="Обязуюсь явиться" required>
